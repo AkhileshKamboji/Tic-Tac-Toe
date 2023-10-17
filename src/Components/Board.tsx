@@ -11,7 +11,7 @@ const Board = ({
   squares: string[];
   onPlay: (nextSquares: string[]) => void;
 }) => {
-  function handleClick(i: number) {
+  const handleClick = (i: number) => {
     if (calculateWinner(squares) || squares[i]) {
       // either if the square the user is clicking is already taken in the previous round or if all the squares are occupied the squares are unclickable
       return;
@@ -24,7 +24,7 @@ const Board = ({
     }
     //taking the updates instance of the board
     onPlay(nextSquares); //saving the instance in history
-  }
+  };
 
   const winner = calculateWinner(squares); // returns X or O if the user won the game
   let status;

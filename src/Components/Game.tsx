@@ -13,17 +13,17 @@ const Game = () => {
   const currentSquares = history[currentMove];
   // this returns the squares where the current game is played
 
-  function handlePlay(nextSquares: string[]) {
+  const handlePlay = (nextSquares: string[]) => {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
     //we update the state of history by adding a new entry containing the square values for that particular step
-  }
+  };
 
-  function jumpTo(nextMove: number) {
+  const jumpTo = (nextMove: number) => {
     setCurrentMove(nextMove);
     //setCurrentMove changes the state of currentmove so that when you click on a button the board goes to that instance of that moves
-  }
+  };
 
   const moves = history.map((squares, move) => {
     // shows all the moves since begining of the game
