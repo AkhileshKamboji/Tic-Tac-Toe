@@ -30,6 +30,8 @@ const Board = ({
   let status;
   if (winner) {
     status = "Winner: " + winner; //game over
+  } else if (squares.every((ele) => ele !== null)) {
+    status = "Tie"; //draw
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O"); //next turn is X or O's..
   }
